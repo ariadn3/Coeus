@@ -19,7 +19,7 @@ def getHighestScoringWord(letters):
     req = urllib.request.Request(URL + '?' + postRequest)
     response = urllib.request.urlopen(req)
     rawPage = response.read().decode('utf-8')
-    #print(rawPage) # For debugging purposes
+    # print(rawPage)
     wordsFoundPattern = re.compile('(?<=<font face=Courier>\n)\w+?(?=(,|</font>))')
     wordsPresent = wordsFoundPattern.search(rawPage)
     if wordsPresent is None:
